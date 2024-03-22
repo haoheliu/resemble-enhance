@@ -16,7 +16,7 @@ _logger = logging.getLogger(__name__)
 
 @dataclass
 class RandomRIR(Effect):
-    rir_dir: Path | None
+    rir_dir: Path
     rir_rate: int = 44_000
     rir_suffix: str = ".npy"
     deterministic: bool = False

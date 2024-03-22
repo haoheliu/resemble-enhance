@@ -17,7 +17,7 @@ from .hparams import HParams
 from .univnet.discriminator import Discriminator
 
 
-def load_G(run_dir: Path, hp: HParams | None = None, training=True):
+def load_G(run_dir: Path, hp = None, training=True):
     if hp is None:
         hp = HParams.load(run_dir)
         assert isinstance(hp, HParams)
@@ -73,7 +73,7 @@ def main():
         losses = engine.gather_attribute("losses")
         return pred, losses
 
-    def feed_D(engine: Engine, batch: dict | None, fake: Tensor):
+    def feed_D(engine: Engine, batch , fake: Tensor):
         if batch is None:
             losses = engine(fake=fake)
         else:

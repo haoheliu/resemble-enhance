@@ -102,7 +102,7 @@ class HParams:
         OmegaConf.save(asdict(self), str(path))
 
     @classmethod
-    def load(cls, run_dir, yaml: Path | None = None):
+    def load(cls, run_dir, yaml=None):
         hps = []
 
         if (run_dir / "hparams.yaml").exists():

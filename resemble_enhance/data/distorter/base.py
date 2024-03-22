@@ -87,7 +87,7 @@ class Choice(Effect):
 
 
 class Permutation(Effect):
-    def __init__(self, *effects, n: int | None = None):
+    def __init__(self, *effects, n= None):
         super().__init__()
         self.effects = effects
         self.n = n

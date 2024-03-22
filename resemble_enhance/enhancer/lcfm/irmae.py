@@ -14,7 +14,7 @@ logger = logging.getLogger(__name__)
 @dataclass
 class IRMAEOutput:
     latent: Tensor  # latent vector
-    decoded: Tensor | None  # decoder output, include extra dim
+    decoded: Tensor   # decoder output, include extra dim
 
 
 class ResBlock(nn.Sequential):

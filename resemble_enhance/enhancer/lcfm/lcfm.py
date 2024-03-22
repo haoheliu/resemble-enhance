@@ -109,7 +109,7 @@ class LCFM(nn.Module):
     def eval_tau_(self, tau):
         self._eval_tau = tau
 
-    def forward(self, x, y: Tensor | None = None, ψ0: Tensor | None = None):
+    def forward(self, x, y = None, ψ0 = None):
         """
         Args:
             x: (b d t), condition mel

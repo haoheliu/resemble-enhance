@@ -64,7 +64,7 @@ class UnivNet(nn.Module):
     def eps(self):
         return 1e-5
 
-    def forward(self, x: Tensor, y: Tensor | None = None, npad=10):
+    def forward(self, x: Tensor, y = None, npad=10):
         """
         Args:
             x: (b c t), acoustic features

@@ -271,7 +271,7 @@ class CFM(nn.Module):
             global_dim=self.time_emb_dim,
         )
 
-    def _perturb(self, ψ1: Tensor, t: Tensor | None = None):
+    def _perturb(self, ψ1: Tensor, t = None):
         """
         Perturb ψ1 to ψt.
         """
@@ -311,7 +311,7 @@ class CFM(nn.Module):
         """
         return ψ1 - ψ0
 
-    def _to_v(self, *, ψt, x, t: float | Tensor):
+    def _to_v(self, *, ψt, x, t):
         """
         Args:
             ψt: (b c t)
@@ -364,7 +364,7 @@ class CFM(nn.Module):
         ψ1 = self.solver(f=f, ψ0=ψ0, t0=t0)
         return ψ1
 
-    def forward(self, x: Tensor, y: Tensor | None = None, ψ0: Tensor | None = None, t0=0.0):
+    def forward(self, x: Tensor, y = None, ψ0 = None, t0=0.0):
         if y is None:
             y = self.sample(x, ψ0=ψ0, t0=t0)
         else:

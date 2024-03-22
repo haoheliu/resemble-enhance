@@ -16,7 +16,7 @@ from .denoiser import Denoiser
 from .hparams import HParams
 
 
-def load_G(run_dir: Path, hp: HParams | None = None, training=True):
+def load_G(run_dir: Path, hp = None, training=True):
     if hp is None:
         hp = HParams.load(run_dir)
     assert isinstance(hp, HParams)

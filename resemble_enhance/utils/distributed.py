@@ -51,7 +51,7 @@ def is_global_leader():
     return global_rank() == 0
 
 
-def leader_only(leader_only_type, fn: Callable | None = None, boardcast_return=False) -> Callable:
+def leader_only(leader_only_type, fn = None, boardcast_return=False) -> Callable:
     """
     Args:
         fn: The function to decorate

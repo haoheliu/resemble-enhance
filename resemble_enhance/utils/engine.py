@@ -46,7 +46,7 @@ def gather_attribute(module, attrname, delete=True, prefix=None):
     return ret
 
 
-def dispatch_attribute(module, attrname, value, filter_fn: Callable[[nn.Module], bool] | None = None):
+def dispatch_attribute(module, attrname, value, filter_fn = None):
     for _, module in _get_named_modules(module, attrname):
         if filter_fn is None or filter_fn(module):
             setattr(module, attrname, value)

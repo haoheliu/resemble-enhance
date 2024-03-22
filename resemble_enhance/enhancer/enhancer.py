@@ -125,7 +125,7 @@ class Enhancer(nn.Module):
         path = loop.get_running_loop_viz_path("input", ".png")
         plt.savefig(path, dpi=300)
 
-    def _may_denoise(self, x: Tensor, y: Tensor | None = None):
+    def _may_denoise(self, x: Tensor, y = None):
         if self.hp.lcfm_training_mode == "cfm":
             return self.denoiser(x, y)
         return x
@@ -142,7 +142,7 @@ class Enhancer(nn.Module):
         self.lcfm.eval_tau_(tau)
         self._eval_lambd = lambd
 
-    def forward(self, x: Tensor, y: Tensor | None = None, z: Tensor | None = None):
+    def forward(self, x: Tensor, y = None, z = None):
         """
         Args:
             x: (b t), mix wavs (fg + bg)
