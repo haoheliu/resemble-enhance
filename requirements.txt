@@ -1,5 +1,5 @@
 celluloid==0.2.0
-deepspeed==0.12.4
+deepspeed==0.14.4
 omegaconf==2.3.0
 ptflops==0.7.1.2
 rich==13.7.0
